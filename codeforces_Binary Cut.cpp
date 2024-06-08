@@ -1,0 +1,111 @@
+#include "bits/stdc++.h"
+using namespace std;
+
+#define ll long long int
+#define pb push_back
+#define vi vector<int>
+#define vvi vector<vector<int>>
+#define vpi vector<pair<int, int>>
+#define yes cout << "YES" << endl
+#define no cout << "NO" << endl
+ll MOD = (7 + (10e9));
+
+string decToBin(ll num)
+{
+    string str;
+    while (num)
+    {
+        if (num & 1)
+            str += '1';
+        else
+            str += '0';
+        num >>= 1;
+    }
+    return str;
+}
+
+ll binToDec(string str)
+{
+    ll dec_num = 0;
+    ll power = 0;
+    ll n = str.length();
+    for (ll i = n - 1; i >= 0; i--)
+    {
+        if (str[i] == '1')
+        {
+            dec_num += (1 << power);
+        }
+        power++;
+    }
+    return dec_num;
+}
+
+void iv(vi &v, ll n)
+{
+    ll temp;
+    for (ll i = 0; i < n; i++)
+    {
+        cin >> temp;
+        v.pb(temp);
+    }
+}
+
+int main()
+{
+    ll t;
+    cin >> t;
+    while (t--)
+    {
+        string s;
+        cin >> s;
+        string s2 = s;
+        sort(s2.begin(), s2.end());
+        if (s == s2)
+        {
+            cout << 1 << endl;
+            continue;
+        }
+        ll flag01 = 0;
+        int i = 0;
+        ll ans = 0;
+        while (true)
+        {
+            if (s[i] == '0')
+            {
+                while (i < s.length() && s[i] == '0')
+                {
+                    i++;
+                }
+                if (i == s.length())
+                    break;
+                if (flag01 == 0)
+                {
+                    while (i < s.length() && s[i] == '1')
+                    {
+                        i++;
+                    }
+                    flag01 = 1;
+                }
+                if (i == s.length())
+                    break;
+                ans++;
+            }
+            if (i == s.length())
+                break;
+            if (s[i] == '1')
+            {
+                while (i < s.length() && s[i] == '1')
+                {
+                    i++;
+                }
+                if (i == s.length())
+                    break;
+                ans++;
+            }
+            if (i == s.length())
+                break;
+        }
+        cout << ans + 1 << endl;
+    }
+    return 0;
+}
