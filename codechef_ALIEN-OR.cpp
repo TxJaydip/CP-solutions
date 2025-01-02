@@ -52,12 +52,6 @@ void iv(vi &v, ll n)
     }
 }
 
-// bool fun(vector<string> &v, string j1, ll curr_val, ll ind)
-// {
-
-//     return 0;
-// }
-
 bool compare(string s1, string s2, ll ind)
 {
     // cout << "In comp, AS1: " << s1 << ", J1S2: " << s2 << ", ind: " << ind << endl;

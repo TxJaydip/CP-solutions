@@ -38,9 +38,9 @@ int main()
         vi d;
         iv(d, m);
 
-        unordered_map<int, int> mp;
-        mp.reserve(4096);
-        mp.max_load_factor(0.25);
+        map<int, int> mp;
+        // mp.reserve(4096);
+        // mp.max_load_factor(0.25);
         for (auto i : d)
         {
             mp[i]++;

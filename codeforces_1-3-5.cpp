@@ -52,11 +52,11 @@ void iv(vi &v, ll n)
 
 int main()
 {
-    ll t;
+    int t;
     cin >> t;
     while (t--)
     {
-        ll n;
+        int n;
         cin >> n;
         if (n <= 2)
         {
